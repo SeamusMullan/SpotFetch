@@ -17,6 +17,7 @@ classifiers = [
 dependencies = [
     "pyside6-essentials==6.9.0",
     "pywin32>=310; sys_platform == 'win32'",
+    "pyobjc>=10.0; sys_platform == 'darwin'",
 ]
 
 [dependency-groups]

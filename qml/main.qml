@@ -26,18 +26,29 @@ ApplicationWindow {
 
     width: 1280
     height: 720
-    flags: Qt.FramelessWindowHint | Qt.Window
+    // Use platform detection to set appropriate flags
+    flags: (Qt.platform.os === "osx" || Qt.platform.os === "macos") 
+           ? Qt.Window  // On macOS, let native code handle window decoration
+           : Qt.FramelessWindowHint | Qt.Window  // Standard frameless for other platforms
     visible: true
+    
+    // Property to detect macOS platform
+    readonly property bool isMacOS: Qt.platform.os === "osx" || Qt.platform.os === "macos"
 
     LayoutMirroring.enabled: Qt.application.layoutDirection === Qt.RightToLeft
     LayoutMirroring.childrenInherit: true
 
     SpotFetchMainPage {
+        id: mainPage
         appWindow: _shared
 
         anchors {
             fill: root.contentItem
-            margins: _private.windowBorder
+            // No top margin on macOS to eliminate the gap under the header
+            topMargin: isMacOS ? 0 : _private.windowBorder
+            leftMargin: _private.windowBorder
+            rightMargin: _private.windowBorder
+            bottomMargin: _private.windowBorder
         }
     }
 
@@ -79,5 +90,4 @@ ApplicationWindow {
             root.close()
         }
     }
-
 }

@@ -67,6 +67,9 @@ class SpotFetchlication(QGuiApplication):
             from spotfetch.framelesswindow.linux import LinuxEventFilter
             self._event_filter = LinuxEventFilter(border_width=5)
             self.installEventFilter(self._event_filter)
+        elif platform.system() == "Darwin":  # macOS
+            # We'll configure the macOS window after it's created
+            pass
 
     def start_engine(self):
         self._engine.load(QUrl.fromLocalFile(":/qt/qml/main.qml"))
@@ -78,6 +81,17 @@ class SpotFetchlication(QGuiApplication):
             self._effects = WindowsWindowEffect()
             self._effects.addShadowEffect(hwnd)
             self._effects.addWindowAnimation(hwnd)
+        elif platform.system() == "Darwin":  # macOS
+            # Apply macOS specific window styling
+            if self.topLevelWindows():
+                window = self.topLevelWindows()[0]
+                try:
+                    # Import here to avoid issues on non-macOS platforms
+                    from spotfetch.framelesswindow.macos import MacOSEventFilter
+                    self._event_filter = MacOSEventFilter()
+                    self._event_filter.set_window(window)
+                except ImportError as e:
+                    print(f"Error importing macOS modules: {e}")
 
     def verify(self):
         if not self._engine.rootObjects():
