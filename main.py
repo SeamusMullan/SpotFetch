@@ -2,7 +2,7 @@
 
 
 def main():
-    from myapp.startup import perform_startup
+    from spotfetch.startup import perform_startup
 
     perform_startup()
 

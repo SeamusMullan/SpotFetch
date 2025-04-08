@@ -20,7 +20,7 @@ import QtQuick.Controls
 import "../shared"
 
 
-MyAppAutoWidthMenu {
+SpotFetchAutoWidthMenu {
     title: qsTranslate("HeaderBar", "&Menu 1")
 
     Action {

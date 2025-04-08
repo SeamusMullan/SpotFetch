@@ -1,2 +1,2 @@
 module header
-MyAppHeader MyAppHeader.qml
+SpotFetchHeader SpotFetchHeader.qml

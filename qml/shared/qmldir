@@ -1,2 +1,2 @@
 module shared
-MyAppAutoWidthMenu MyAppAutoWidthMenu.qml
+SpotFetchAutoWidthMenu SpotFetchAutoWidthMenu.qml

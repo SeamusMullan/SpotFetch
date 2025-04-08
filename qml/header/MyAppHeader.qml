@@ -51,7 +51,7 @@ Item {
         }
     }
 
-    MyAppHeaderContent {
+    SpotFetchHeaderContent {
         id: headerBar
 
         appWindow: root.appWindow

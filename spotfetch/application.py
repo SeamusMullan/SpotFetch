@@ -22,12 +22,12 @@ from PySide6.QtGui import QGuiApplication, QIcon
 from PySide6.QtQml import QQmlApplicationEngine
 
 
-class MyApplication(QGuiApplication):
+class SpotFetchlication(QGuiApplication):
 
     def __init__(self, args):
         super().__init__(args)
         self._engine = QQmlApplicationEngine()
-        self._translator_myapp = QTranslator()
+        self._translator_spotfetch = QTranslator()
         self._translator_qt = QTranslator()
 
         self._event_filter = None
@@ -48,23 +48,23 @@ class MyApplication(QGuiApplication):
         locale = QLocale(self._engine.uiLanguage())
 
         self.removeTranslator(self._translator_qt)
-        self.removeTranslator(self._translator_myapp)
+        self.removeTranslator(self._translator_spotfetch)
 
         self._translator_qt.load(locale, "qtbase", "_", QLibraryInfo.location(QLibraryInfo.LibraryPath.TranslationsPath))
-        self._translator_myapp.load(f":/i18n/{locale.name()}.qm")
+        self._translator_spotfetch.load(f":/i18n/{locale.name()}.qm")
 
         self.installTranslator(self._translator_qt)
-        self.installTranslator(self._translator_myapp)
+        self.installTranslator(self._translator_spotfetch)
 
         self.setLayoutDirection(locale.textDirection())
 
     def set_up_window_event_filter(self):
         if platform.system() == "Windows":
-            from myapp.framelesswindow.win import WindowsEventFilter
+            from spotfetch.framelesswindow.win import WindowsEventFilter
             self._event_filter = WindowsEventFilter(border_width=5)
             self.installNativeEventFilter(self._event_filter)
         elif platform.system() == "Linux":
-            from myapp.framelesswindow.linux import LinuxEventFilter
+            from spotfetch.framelesswindow.linux import LinuxEventFilter
             self._event_filter = LinuxEventFilter(border_width=5)
             self.installEventFilter(self._event_filter)
 
@@ -74,7 +74,7 @@ class MyApplication(QGuiApplication):
     def set_up_window_effects(self):
         if sys.platform == "win32":
             hwnd = self.topLevelWindows()[0].winId()
-            from myapp.framelesswindow.win import WindowsWindowEffect
+            from spotfetch.framelesswindow.win import WindowsWindowEffect
             self._effects = WindowsWindowEffect()
             self._effects.addShadowEffect(hwnd)
             self._effects.addWindowAnimation(hwnd)

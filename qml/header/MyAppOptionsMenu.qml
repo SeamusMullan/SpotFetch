@@ -23,16 +23,16 @@ import "../shared"
 import "../models"
 
 
-MyAppAutoWidthMenu {
+SpotFetchAutoWidthMenu {
     id: root
 
     title: qsTranslate("HeaderBar", "&Options")
 
-    MyAppAutoWidthMenu {
+    SpotFetchAutoWidthMenu {
         title: qsTranslate("HeaderBar", "&Language")
 
         Repeater {
-            model: MyAppLanguageModel {}
+            model: SpotFetchLanguageModel {}
 
             MenuItem {
                 id: _itemDelegate

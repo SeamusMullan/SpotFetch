@@ -24,9 +24,9 @@ class StartUp:
     @staticmethod
     def configure_qt_application_data():
         from PySide6.QtCore import QCoreApplication
-        QCoreApplication.setApplicationName("my app name")
+        QCoreApplication.setApplicationName("spotfetch name")
         QCoreApplication.setOrganizationName("my org name")
-        QCoreApplication.setApplicationVersion("my app version")
+        QCoreApplication.setApplicationVersion("spotfetch version")
 
     @staticmethod
     def configure_environment_variables():
@@ -36,16 +36,16 @@ class StartUp:
 
     @staticmethod
     def import_resources():
-        import myapp.generated_resources  # noqa: F401
+        import spotfetch.generated_resources  # noqa: F401
 
     @staticmethod
     def import_bindings():
-        import myapp.pyobjects  # noqa: F401
+        import spotfetch.pyobjects  # noqa: F401
 
     @staticmethod
     def start_application():
-        from myapp.application import MyApplication
-        app = MyApplication(sys.argv)
+        from spotfetch.application import SpotFetchlication
+        app = SpotFetchlication(sys.argv)
 
         app.set_window_icon()
         app.set_up_signals()

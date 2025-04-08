@@ -524,5 +524,5 @@ $RECYCLE.BIN/
 
 .flatpak-builder
 build-dir
-myapp/generated_resources.py
+spotfetch/generated_resources.py
 test/generated_resources.py

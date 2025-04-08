@@ -38,10 +38,10 @@ Item {
                 color: "transparent"
             }
 
-            MyAppMenu1 {}
-            MyAppMenu2 {}
-            MyAppOptionsMenu {}
-            MyAppHelpMenu {}
+            SpotFetchMenu1 {}
+            SpotFetchMenu2 {}
+            SpotFetchOptionsMenu {}
+            SpotFetchHelpMenu {}
         }
 
         Label {

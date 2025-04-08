@@ -32,7 +32,7 @@ ApplicationWindow {
     LayoutMirroring.enabled: Qt.application.layoutDirection === Qt.RightToLeft
     LayoutMirroring.childrenInherit: true
 
-    MyAppMainPage {
+    SpotFetchMainPage {
         appWindow: _shared
 
         anchors {

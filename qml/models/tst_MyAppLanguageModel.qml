@@ -22,15 +22,15 @@ import QtTest
 TestCase {
     id: testCase
 
-    name: "MyAppLanguageModelTest"
+    name: "SpotFetchLanguageModelTest"
 
     Component {
         id: objectUnderTest
 
-        MyAppLanguageModel {}
+        SpotFetchLanguageModel {}
     }
 
-    function extractLanguagesFrom(model: MyAppLanguageModel): Array<string> {
+    function extractLanguagesFrom(model: SpotFetchLanguageModel): Array<string> {
         const languages = []
         for (let i = 0; i < model.count; i++) {
             languages.push(model.get(i).abbrev)

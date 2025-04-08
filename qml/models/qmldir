@@ -1,2 +1,2 @@
 module models
-MyAppLanguageModel MyAppLanguageModel.qml
+SpotFetchLanguageModel SpotFetchLanguageModel.qml

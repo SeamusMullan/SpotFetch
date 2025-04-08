@@ -43,7 +43,7 @@ Whenever you change files in the `data`, `i18n`, or `qml` directories, run:
 just build-develop
 ```
 
-This compiles them into a Python file in the myapp folder, so the app recognizes them on startup.
+This compiles them into a Python file in the spotfetch folder, so the app recognizes them on startup.
 
 To start the app, run:
 

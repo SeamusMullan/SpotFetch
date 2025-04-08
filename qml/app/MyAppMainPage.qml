@@ -33,7 +33,7 @@ Page {
         fill: root
     }
 
-    header: MyAppHeader {
+    header: SpotFetchHeader {
         appWindow: root.appWindow
     }
 
