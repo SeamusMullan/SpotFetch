@@ -75,7 +75,7 @@ Page {
         }
 
         Label {
-            text: qsTranslate("MainPage", "Have fun!")
+            text: qsTranslate("SpotFetch", "Download your music from Spotify here!")
             color: Material.accent
 
             font {

@@ -82,6 +82,9 @@ class MacOSEventFilter(QObject):
                 self._restore_window_style
             )
             
+            # set window title to SpotFetch
+            ns_window.setTitle_("SpotFetch")
+            
             # Apply window style
             self._restore_window_style(ns_window)
             
@@ -103,8 +106,8 @@ class MacOSEventFilter(QObject):
                 (1 << 15)  # NSWindowStyleMaskFullSizeContentView - content extends under title bar
             )
             
-            # Hide the title text
-            window.setTitle_("")
+            # Set the title text
+            window.setTitle_("SpotFetch")
             window.setTitleVisibility_(1)  # NSWindowTitleHidden
             
             # Allow the entire window background to be draggable
