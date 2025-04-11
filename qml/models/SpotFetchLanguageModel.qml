@@ -21,20 +21,20 @@ import QtQuick
 ListModel {
     readonly property var languagesForTranslationTool: [
         qsTranslate("Languages", "English"),
-        // qsTranslate("Languages", "German"),
-        // qsTranslate("Languages", "Hebrew"),
+        qsTranslate("Languages", "German"),
+        qsTranslate("Languages", "Hebrew"),
     ]
 
     ListElement {
         language: "English"
         abbrev: "en_US"
     }
-    // ListElement {
-    //     language: "German"
-    //     abbrev: "de_DE"
-    // }
-    // ListElement {
-    //     language: "Hebrew"
-    //     abbrev: "he_IL"
-    // }
+    ListElement {
+        language: "German"
+        abbrev: "de_DE"
+    }
+    ListElement {
+        language: "Hebrew"
+        abbrev: "he_IL"
+    }
 }
