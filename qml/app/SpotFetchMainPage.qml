@@ -38,61 +38,53 @@ Page {
     }
 
     ColumnLayout {
+        anchors.fill: parent
         spacing: 8
-        width: root.width
-
-        Image {
-            source: "qrc:/data/app-icon.svg"
-            asynchronous: true
-
-            Layout.alignment: Qt.AlignHCenter
-            Layout.preferredWidth: 308
-            Layout.preferredHeight: 226
-            Layout.topMargin: 30
-        }
 
         Label {
             text: Qt.application.name + ' (' + Qt.application.version + ')'
-
             font {
                 bold: true
-                pixelSize: Qt.application.font.pixelSize * 1.5
+                pixelSize: Qt.application.font.pixelSize * 1.2
             }
-
             Layout.alignment: Qt.AlignHCenter
-            Layout.topMargin: 45
+            Layout.topMargin: 10
         }
 
-        Label {
-            text: 'Running on ' + Qt.platform.os
-
-            font {
-                bold: true
-                pixelSize: Qt.application.font.pixelSize * 1.5
+        TabBar {
+            id: tabBar
+            Layout.fillWidth: true
+            
+            TabButton {
+                text: qsTr("Download")
             }
-
-            Layout.alignment: Qt.AlignHCenter
+            TabButton {
+                text: qsTr("Active Downloads")
+            }
+            TabButton {
+                text: qsTr("History")
+            }
         }
 
-        Label {
-            text: qsTranslate("SpotFetch", "Download your music from Spotify here!")
-            color: Material.accent
-
-            font {
-                bold: true
-                pixelSize: Qt.application.font.pixelSize * 1.5
+        StackLayout {
+            currentIndex: tabBar.currentIndex
+            Layout.fillWidth: true
+            Layout.fillHeight: true
+            
+            // Download Tab
+            SpotFetchDownloadTab {
+                id: downloadTab
             }
-
-            Layout.alignment: Qt.AlignHCenter
-            Layout.topMargin: 45
-        }
-
-        Label {
-            text: qsTranslate("MainPage", "Exposed from Python: '%1'").arg(SingletonPyObject.exposed_property)
-
-            Layout.alignment: Qt.AlignHCenter
-            Layout.topMargin: 45
+            
+            // Active Downloads Tab
+            SpotFetchActiveDownloadsTab {
+                id: activeDownloadsTab
+            }
+            
+            // History Tab
+            SpotFetchHistoryTab {
+                id: historyTab
+            }
         }
     }
-
 }

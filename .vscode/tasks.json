@@ -14,6 +14,20 @@
                 "panel": "new"
             },
             "problemMatcher": []
+        },
+        {
+            "label": "Run SpotFetch [Clean Build] (MacOS)",
+            "type": "shell",
+            "command": "just init && just clean && just build-develop && uv run main.py",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            },
+            "problemMatcher": []
         }
     ]
 }

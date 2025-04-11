@@ -24,9 +24,9 @@ class StartUp:
     @staticmethod
     def configure_qt_application_data():
         from PySide6.QtCore import QCoreApplication
-        QCoreApplication.setApplicationName("spotfetch name")
-        QCoreApplication.setOrganizationName("my org name")
-        QCoreApplication.setApplicationVersion("spotfetch version")
+        QCoreApplication.setApplicationName("SpotFetch")
+        QCoreApplication.setOrganizationName("DirektDSP")
+        QCoreApplication.setApplicationVersion("1.0.0")
 
     @staticmethod
     def configure_environment_variables():

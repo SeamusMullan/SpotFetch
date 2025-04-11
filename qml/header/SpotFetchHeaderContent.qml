@@ -67,8 +67,8 @@ Item {
 
                 icon {
                     source: "qrc:/data/icons/minimize_black_24dp.svg"
-                    width: 18
-                    height: 18
+                    width: 14
+                    height: 14
                 }
 
                 anchors {
@@ -92,8 +92,8 @@ Item {
                     property url iconNormalize: "qrc:/data/icons/close_fullscreen_black_24dp.svg"
 
                     source: maximized ? iconNormalize : iconMaximize
-                    width: 18
-                    height: 18
+                    width: 14
+                    height: 14
                 }
 
                 anchors {
@@ -117,8 +117,8 @@ Item {
 
                 icon {
                     source: "qrc:/data/icons/close_black_24dp.svg"
-                    width: 18
-                    height: 18
+                    width: 14
+                    height: 14
                 }
 
                 anchors {
