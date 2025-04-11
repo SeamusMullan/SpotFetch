@@ -318,6 +318,7 @@ Item {
         title: qsTr("Confirm Clear History")
         standardButtons: Dialog.Yes | Dialog.No
         modal: true
+        anchors.centerIn: parent
         
         Label {
             text: qsTr("Are you sure you want to clear your download history? This action cannot be undone.")
