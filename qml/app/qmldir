@@ -1,5 +1,0 @@
-qmldir app
-SpotFetchMainPage SpotFetchMainPage.qml
-SpotFetchDownloadTab SpotFetchDownloadTab.qml
-SpotFetchActiveDownloadsTab SpotFetchActiveDownloadsTab.qml
-SpotFetchHistoryTab SpotFetchHistoryTab.qml
